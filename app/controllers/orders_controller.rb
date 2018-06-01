@@ -28,9 +28,18 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save tessdsts code
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+      to @order, notice: 'Order was successfully created.' }
+        format.json    format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
+        forrender :show, status: :created, location: @order }
+      else   format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.json { render :show, status: :created, location: @order }
+      else
+        for   format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.json { render :show, status: :created, location: @order }
+      else
+        for
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
